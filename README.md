@@ -1,4 +1,4 @@
-# qzapi
+# qzgo
 
 强智教务系统 API 的 Go SDK 实现。
 
@@ -9,20 +9,20 @@
 First, use go get to install the latest version of the library.
 
 ```sh
-go get -u github.com/cdfmlr/qzapi
+go get -u github.com/cdfmlr/qzgo
 ```
 
 Next, include qzapi in your application:
 
 ```go
-import "github.com/cdfmlr/qzapi"
+import "github.com/cdfmlr/qzgo"
 ```
 
 Then enjoy your "强(ruò)智教务系统":
 
 ```go
 // 登录
-client, err := qzapi.NewClientLogin("你的学校", '你本人的学号', '你本人的密码')
+client, err := qzgo.NewClientLogin("你的学校", '你本人的学号', '你本人的密码')
 // 你的学校填 jwxt.xxxx.edu.cn 的那个 xxxx
 if err != nil {
     panic(err)

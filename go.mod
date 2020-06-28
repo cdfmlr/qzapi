@@ -1,3 +1,3 @@
-module github.com/cdfmlr/qzapi
+module github.com/cdfmlr/qzgo
 
 go 1.12
