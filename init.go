@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-
-package qzapi
+package qzgo
 
 import "log"
 
-func init(){
+func init() {
 	log.SetPrefix("[qzapi] ")
-	log.SetFlags(log.Ldate|log.Lmicroseconds|log.Lshortfile|log.LUTC)
+	log.SetFlags(log.Ldate | log.Lmicroseconds | log.Lshortfile | log.LUTC)
 }

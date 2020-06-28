@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package qzapi
+package qzgo
 
 type Client struct {
 	School string // 学校
@@ -29,4 +29,3 @@ func NewClientLogin(school string, xh string, pwd string) (*Client, error) {
 	_, err := client.AuthUser()
 	return client, err
 }
-

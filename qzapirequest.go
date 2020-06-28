@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package qzapi
+package qzgo
 
 import (
 	"encoding/json"
@@ -69,7 +69,7 @@ func qzApiGet(school string, token string, res interface{}, a map[string]string)
 
 	err = json.Unmarshal(body, res)
 	if err != nil {
-		log.Println(err, "\nresp.body:\n" , string(body))
+		log.Println(err, "\nresp.body:\n", string(body))
 		return err
 	}
 	return nil
