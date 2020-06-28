@@ -2,9 +2,23 @@
 
 强智教务系统 API 的 Go SDK 实现。
 
-本项目基于 [TLingC/QZAPI](https://github.com/TLingC/QZAPI/)。
+> 本项目基于 [TLingC/QZAPI](https://github.com/TLingC/QZAPI/)。
 
 ## Getting Started
+
+First, use go get to install the latest version of the library.
+
+```sh
+go get -u github.com/cdfmlr/qzapi
+```
+
+Next, include qzapi in your application:
+
+```go
+import "github.com/cdfmlr/qzapi"
+```
+
+Then enjoy your "强(ruò)智教务系统":
 
 ```go
 // 登录
@@ -15,7 +29,7 @@ if err != nil {
 }
 
 // 查成绩
-r, err := client.GetCjcx(target, "")
+r, err := client.GetCjcx("目标学号", "")
 if err != nil {
     panic(err)
 }
