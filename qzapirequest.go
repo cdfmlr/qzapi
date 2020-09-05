@@ -17,12 +17,14 @@
 package qzgo
 
 import (
+	"crypto/tls"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"net/url"
+	"time"
 )
 
 func qzApiGet(school string, token string, res interface{}, a map[string]string) error {
@@ -46,7 +48,12 @@ func qzApiGet(school string, token string, res interface{}, a map[string]string)
 	// fmt.Println(urlPath)
 
 	// Make Request and Header
-	client := &http.Client{}
+	client := &http.Client{
+		Transport: &http.Transport{ // 跳过 TLS 证书检测
+			TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+		},
+		Timeout: 10 * time.Second,
+	}
 
 	req, err := http.NewRequest("GET", urlPath, nil)
 	if err != nil {
